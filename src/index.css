@@ -1,0 +1,382 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 主品牌色 - 琥珀金色系 */
+  --color-primary-50: #fffbeb;
+  --color-primary-100: #fef3c7;
+  --color-primary-200: #fde68a;
+  --color-primary-300: #fcd34d;
+  --color-primary-400: #fbbf24;
+  --color-primary-500: #f59e0b;  /* 主色调 */
+  --color-primary-600: #d97706;  /* 悬浮状态 */
+  --color-primary-700: #b45309;  /* 按下状态 */
+  --color-primary-800: #92400e;
+  --color-primary-900: #78350f;
+
+  /* 辅助色 - 粉色系 (宝宝生日等场景) */
+  --color-secondary-50: #fdf2f8;
+  --color-secondary-100: #fce7f3;
+  --color-secondary-200: #fbcfe8;
+  --color-secondary-300: #f9a8d4;
+  --color-secondary-400: #f472b6;
+  --color-secondary-500: #ec4899;
+  --color-secondary-600: #db2777;
+  --color-secondary-700: #be185d;
+  --color-secondary-800: #9d174d;
+  --color-secondary-900: #831843;
+
+  /* 中性色系统 */
+  --color-neutral-50: #fafafa;   /* 背景 */
+  --color-neutral-100: #f5f5f5;  /* 卡片背景 */
+  --color-neutral-200: #e5e5e5;  /* 边框 */
+  --color-neutral-300: #d4d4d4;  /* 分割线 */
+  --color-neutral-400: #a3a3a3;  /* 禁用文字 */
+  --color-neutral-500: #737373;  /* 次要文字 */
+  --color-neutral-600: #525252;  /* 正文 */
+  --color-neutral-700: #404040;  /* 标题 */
+  --color-neutral-800: #262626;  /* 主标题 */
+  --color-neutral-900: #171717;  /* 最深色 */
+
+  /* 语义色 */
+  --color-success: #10b981;      /* 成功 */
+  --color-warning: #f59e0b;      /* 警告 */
+  --color-error: #ef4444;        /* 错误 */
+  --color-info: #3b82f6;         /* 信息 */
+
+  /* 特殊色彩 */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-cream: #fffbeb;
+  --color-champagne: #f8f0e3;
+
+  /* 阴影系统 */
+  --shadow-soft: 0 2px 15px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 20px rgba(245, 158, 11, 0.3);
+  --shadow-glow-lg: 0 0 40px rgba(245, 158, 11, 0.2);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-inner-soft: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  /* 渐变 */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-600) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--color-secondary-500) 0%, var(--color-secondary-600) 100%);
+  --gradient-warm: linear-gradient(135deg, var(--color-primary-400) 0%, var(--color-secondary-400) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+}
+
+/* 现代化动画关键帧 */
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes gradient-y {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: center top;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: center center;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.6);
+  }
+}
+
+/* 玻璃拟态效果 */
+.glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 按钮闪光效果 */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.7s;
+}
+
+.btn-shimmer:hover::before {
+  left: 100%;
+}
+
+/* 卡片悬浮效果增强 */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* 文字渐变效果 */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-warm {
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-500);
+}
+
+/* 全局字体和基础样式 */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  scroll-behavior: smooth;
+  color: var(--color-neutral-800);
+  background-color: var(--color-neutral-50);
+}
+
+/* 选择文本样式 */
+::selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-primary-900);
+}
+
+/* 焦点样式 */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* 图片优化 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 链接样式 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 按钮重置 */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* 输入框样式 */
+input, textarea, select {
+  font-family: inherit;
+}
+
+/* 无障碍性改进 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 高级感卡片样式 */
+.premium-card {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  border-color: rgba(245, 158, 11, 0.1);
+}
+
+/* 精致的按钮样式 */
+.premium-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+}
+
+.premium-button:hover {
+  background: linear-gradient(135deg, #262626 0%, #171717 100%);
+  border-color: rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.premium-button:hover * {
+  color: white !important;
+}
+
+/* 微妙的图像悬浮效果 */
+.premium-image {
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+}
+
+.premium-image:hover {
+  transform: scale(1.05);
+}
+
+/* 优雅的文字渐变 */
+.premium-text-gradient {
+  background: linear-gradient(135deg, #262626 0%, #525252 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 精致的分割线 */
+.premium-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%);
+}
+
+/* 高级感的阴影系统 */
+.shadow-premium {
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-premium-lg {
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    0 4px 10px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.shadow-premium-xl {
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* 优雅的悬浮动画 */
+@keyframes premium-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.premium-float {
+  animation: premium-float 6s ease-in-out infinite;
+}
+
+/* 微妙的脉冲效果 */
+@keyframes premium-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.premium-pulse {
+  animation: premium-pulse 4s ease-in-out infinite;
+}
+
+/* 打印样式 */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
