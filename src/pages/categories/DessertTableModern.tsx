@@ -2,13 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ProjectGallery from "@/components/ProjectGallery";
 import { dessertTableCases } from "@/data/projectCases";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/Card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card";
 
 const features = [
   {
@@ -103,13 +97,14 @@ const faqs = [
   },
 ];
 
-export default function DessertTable() {
+export default function DessertTableModern() {
   return (
     <div className="scroll-smooth">
+      {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=luxury%20dessert%20table%20display%20elegant%20pastel%20colors&sign=42e8386f7abe466b62adc1d2420ed5b6"
+            src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=luxury%20dessert%20table%20display%20elegant%20pastel%20colors&sign=hero123"
             alt="精致甜品台"
             className="h-full w-full object-cover"
           />
@@ -158,6 +153,7 @@ export default function DessertTable() {
         </div>
       </section>
 
+      {/* Features Section */}
       <section className="bg-white py-24">
         <div className="container mx-auto px-4">
           <motion.div
@@ -202,6 +198,7 @@ export default function DessertTable() {
         </div>
       </section>
 
+      {/* Pricing Section */}
       <section className="bg-gradient-to-b from-neutral-50 to-white py-24">
         <div className="container mx-auto px-4">
           <motion.div
@@ -233,11 +230,10 @@ export default function DessertTable() {
               >
                 <Card
                   variant={tier.popular ? "gradient" : "default"}
-                  allowOverflow={tier.popular}
                   className={`relative h-full ${tier.popular ? "border-2 border-primary-500" : ""}`}
                 >
                   {tier.popular && (
-                    <div className="absolute -top-4 left-1/2 z-10 -translate-x-1/2">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                       <span className="inline-flex items-center gap-2 rounded-full bg-primary-500 px-4 py-1 text-xs font-semibold text-white shadow-lg">
                         <i className="fa-solid fa-star" />
                         最受欢迎
@@ -292,10 +288,7 @@ export default function DessertTable() {
           >
             <p className="text-neutral-600">
               需要更多定制化方案？
-              <Link
-                to="/contact"
-                className="ml-2 font-semibold text-primary-600 hover:text-primary-700"
-              >
+              <Link to="/contact" className="ml-2 font-semibold text-primary-600 hover:text-primary-700">
                 联系我们的顾问团队 →
               </Link>
             </p>
@@ -303,6 +296,7 @@ export default function DessertTable() {
         </div>
       </section>
 
+      {/* Cases Section */}
       <section id="cases" className="bg-white py-24">
         <div className="container mx-auto px-4">
           <motion.div
@@ -327,6 +321,7 @@ export default function DessertTable() {
         </div>
       </section>
 
+      {/* FAQ Section */}
       <section className="bg-neutral-50 py-24">
         <div className="container mx-auto px-4">
           <motion.div
@@ -372,6 +367,7 @@ export default function DessertTable() {
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="relative overflow-hidden py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-500 via-secondary-500 to-primary-600" />
         <div className="relative z-10">
