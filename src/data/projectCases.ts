@@ -98,6 +98,50 @@ export const dessertTableCases: ProjectDetail[] = [
     ],
     tags: ["户外婚礼", "田园风格", "自然健康"],
   },
+  {
+    id: 5,
+    title: "森系ins风甜品台",
+    theme: "森系自然风格",
+    guestCount: "60-80人",
+    budget: "¥90-120/人",
+    duration: "4小时",
+    description:
+      "为时尚品牌发布会打造的森系ins风甜品台，采用干花、原木和绿植装饰，搭配牛油果、抹茶等健康甜品，呈现清新文艺范儿。",
+    images: [
+      "https://images.unsplash.com/photo-1519915212116-7cfef71f1d3e?w=1200",
+    ],
+    features: [
+      "ins风装饰布置",
+      "100个健康甜品",
+      "干花与绿植搭配",
+      "拍照打卡区",
+      "环保包装",
+      "定制标识牌",
+    ],
+    tags: ["品牌活动", "INS风格", "文艺范"],
+  },
+  {
+    id: 6,
+    title: "日系极简甜品台",
+    theme: "日系和风主题",
+    guestCount: "30-50人",
+    budget: "¥100-130/人",
+    duration: "3小时",
+    description:
+      "为茶道文化体验活动打造的日系极简甜品台，以白色陶器为主，搭配和果子、抹茶甜品，营造宁静禅意的和风氛围。",
+    images: [
+      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200",
+    ],
+    features: [
+      "日式和果子",
+      "50个精致甜品",
+      "茶道表演",
+      "陶器展示",
+      "榻榻米布置",
+      "茶具配套",
+    ],
+    tags: ["日系风格", "和风主题", "文化体验"],
+  },
 ];
 
 // 商务茶歇案例
@@ -170,6 +214,52 @@ export const businessTeaCases: ProjectDetail[] = [
       "灵活调整方案",
     ],
     tags: ["大型活动", "全天服务", "灵活方案"],
+  },
+  {
+    id: 4,
+    title: "新品发布会茶歇",
+    theme: "创意科技风",
+    guestCount: "80-100人",
+    budget: "¥80-100/人",
+    duration: "半天",
+    description:
+      "为创新科技公司新品发布会设计的创意茶歇，甜品造型融入产品元素，提供互动式自助咖啡和分子甜品体验。",
+    images: [
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=1200",
+      "https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?w=1200",
+    ],
+    features: [
+      "互动咖啡吧",
+      "分子甜品台",
+      "品牌元素设计",
+      "现场调酒师",
+      "社交媒体打卡墙",
+      "定制礼盒",
+    ],
+    tags: ["发布会", "科技风", "互动体验"],
+  },
+  {
+    id: 5,
+    title: "高端私董会茶歇",
+    theme: "尊享商务风",
+    guestCount: "20-25人",
+    budget: "¥150-180/人",
+    duration: "3小时",
+    description:
+      "为金融行业私董会提供的高端茶歇服务，精选顶级食材，搭配香槟、手工巧克力和艺术甜点，体现尊贵礼遇。",
+    images: [
+      "https://images.unsplash.com/photo-1481833761820-0509d3217039?w=1200",
+      "https://images.unsplash.com/photo-1515005651411-a90452949f83?w=1200",
+    ],
+    features: [
+      "香槟鸡尾酒",
+      "手工巧克力",
+      "艺术甜点摆盘",
+      "专属服务生",
+      "名片展示区",
+      "定制礼盒",
+    ],
+    tags: ["高端商务", "私董会", "尊贵体验"],
   },
 ];
 

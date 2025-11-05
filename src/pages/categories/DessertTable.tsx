@@ -233,10 +233,11 @@ export default function DessertTable() {
               >
                 <Card
                   variant={tier.popular ? "gradient" : "default"}
+                  allowOverflow={tier.popular}
                   className={`relative h-full ${tier.popular ? "border-2 border-primary-500" : ""}`}
                 >
                   {tier.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <div className="absolute -top-4 left-1/2 z-10 -translate-x-1/2">
                       <span className="inline-flex items-center gap-2 rounded-full bg-primary-500 px-4 py-1 text-xs font-semibold text-white shadow-lg">
                         <i className="fa-solid fa-star" />
                         最受欢迎

@@ -179,22 +179,6 @@ export default function ProjectGallery({ projects }: ProjectGalleryProps) {
                     >
                       <i className="fa-solid fa-chevron-right" />
                     </button>
-
-                    <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
-                      {selectedProject.images.map((_, index) => (
-                        <button
-                          type="button"
-                          key={index}
-                          onClick={() => setCurrentImageIndex(index)}
-                          className={`h-2 rounded-full transition-all ${
-                            index === currentImageIndex
-                              ? "w-8 bg-white"
-                              : "w-2 bg-white/50 hover:bg-white/75"
-                          }`}
-                          aria-label={`查看图片 ${index + 1}`}
-                        />
-                      ))}
-                    </div>
                   </>
                 )}
               </div>

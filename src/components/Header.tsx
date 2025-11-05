@@ -75,8 +75,8 @@ function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled
-          ? "border-b border-white/60 bg-white/90 shadow-[0_8px_30px_rgba(15,23,42,0.12)] backdrop-blur-xl py-4"
-          : "border-b border-transparent bg-gradient-to-b from-white/60 via-white/30 to-transparent py-6"
+          ? "bg-white/90 shadow-[0_8px_30px_rgba(15,23,42,0.12)] backdrop-blur-xl py-4"
+          : "bg-transparent py-6"
       )}
     >
       <div className="container flex max-w-7xl items-center justify-between px-6">

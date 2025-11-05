@@ -246,6 +246,7 @@ export default function WeddingDessert() {
               >
                 <Card
                   variant={tier.popular ? "gradient" : "default"}
+                  allowOverflow={tier.popular}
                   className={`relative h-full ${
                     tier.popular ? "scale-105 border-2 border-rose-500 shadow-2xl" : ""
                   }`}

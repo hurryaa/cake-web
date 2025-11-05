@@ -3,10 +3,11 @@ import { cn } from "@/lib/utils";
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: "default" | "hover" | "glass" | "gradient";
+  allowOverflow?: boolean;
 }
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant = "default", children, ...props }, ref) => {
+  ({ className, variant = "default", allowOverflow = false, children, ...props }, ref) => {
     const variants = {
       default: "bg-white border border-neutral-200 shadow-sm",
       hover:
@@ -21,7 +22,8 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          "rounded-2xl overflow-hidden",
+          "rounded-2xl",
+          allowOverflow ? "overflow-visible" : "overflow-hidden",
           variants[variant],
           className
         )}
