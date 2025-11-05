@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { AuthContext } from "@/contexts/authContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FloatingActionButton from "@/components/FloatingActionButton";
+import FloatingActions from "@/components/ui/FloatingActions";
 import NotificationCenter, { useNotifications } from "@/components/NotificationCenter";
 
 // 页面导入
@@ -139,7 +139,7 @@ export default function App() {
         </Routes>
       </AnimatePresence>
 
-      <FloatingActionButton />
+      <FloatingActions />
 
       <NotificationCenter notifications={notifications} onRemove={removeNotification} />
     </AuthContext.Provider>
